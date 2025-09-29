@@ -16,3 +16,9 @@ export function urlIsActive(
 export function toUrl(href: NonNullable<InertiaLinkProps['href']>) {
     return typeof href === 'string' ? href : href?.url;
 }
+
+export const formatDate = (timestamp: string) => {
+    if (!timestamp) return '';
+    const date = new Date(parseInt(timestamp) * 1000);
+    return date.toISOString().split('T')[0]
+};
