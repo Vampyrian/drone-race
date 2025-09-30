@@ -73,7 +73,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                         v-if="processing"
                         class="h-4 w-4 animate-spin"
                     />
-                    Create
+                    Update
                 </Button>
             </Form>
         </div>

@@ -56,7 +56,6 @@ class RaceController extends Controller
     public function destroy(Race $race): RedirectResponse
     {
         $race->delete();
-        dd($race);
         return to_route('race.index')->with('status', 'Race deleted successfully.');
     }
 }

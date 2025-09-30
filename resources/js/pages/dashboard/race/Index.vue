@@ -7,6 +7,7 @@ import Heading from '@/components/Heading.vue';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { create, edit, destroy, } from '@/actions/App/Http/Controllers/Dashboard/RaceController';
+import { index } from '@/routes/racer';
 import { formatDate } from '@/lib/utils';
 
 interface Race {
@@ -64,7 +65,9 @@ const confirmDestroy = (id: number) => {
                         <TableCell>{{ formatDate(race.start_at) }}</TableCell>
                         <TableCell>{{ formatDate(race.end_at) }}</TableCell>
                         <TableCell class="text-right">
-                            <Button variant="outline" size="sm">Log in race</Button>
+                            <Link :href="index(race.id)">
+                                <Button variant="outline" size="sm" as="a">Log in race</Button>
+                            </Link>
                             <Link :href="edit.url(race.id)">
                                 <Button as="a" variant="outline" size="sm">Edit</Button>
                             </Link>
